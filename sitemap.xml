@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/archives/3aecd444.html</loc>
+    <loc>https://fuqingsong.work/archives/af491aa0.html</loc>
     
     <lastmod>2022-09-07</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/archives/af491aa0.html</loc>
+    <loc>https://fuqingsong.work/archives/3aecd444.html</loc>
     
     <lastmod>2022-09-07</lastmod>
     
@@ -92,6 +92,13 @@
 
   
   <url>
+    <loc>https://fuqingsong.work/tags/MySql%E9%AB%98%E7%BA%A7/</loc>
+    <lastmod>2022-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://fuqingsong.work/tags/HashMap/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,13 +113,6 @@
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/tags/%E4%B8%AD%E7%A7%8B%E8%8A%82/</loc>
-    <lastmod>2022-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fuqingsong.work/tags/%E4%BB%8A%E6%97%A5%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -120,7 +120,7 @@
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/tags/MySql%E9%AB%98%E7%BA%A7/</loc>
+    <loc>https://fuqingsong.work/tags/%E4%B8%AD%E7%A7%8B%E8%8A%82/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -129,14 +129,14 @@
 
   
   <url>
-    <loc>https://fuqingsong.work/categories/Java/</loc>
+    <loc>https://fuqingsong.work/categories/MySql/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://fuqingsong.work/categories/Java/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -150,7 +150,7 @@
   </url>
   
   <url>
-    <loc>https://fuqingsong.work/categories/MySql/</loc>
+    <loc>https://fuqingsong.work/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
