@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Seata | 小`白松</title><meta name="keywords" content="Seata"><meta name="author" content="FuQingSong"><meta name="copyright" content="FuQingSong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Seata">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seata">
+<meta property="og:url" content="https://fuqingsong.work/archives/8d9a091c.html">
+<meta property="og:site_name" content="小&#96;白松">
+<meta property="og:description" content="Seata">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ffuqingsong.gitee.io/pic-go-demo/img/202209231134031.jpg">
+<meta property="article:published_time" content="2022-09-23T05:05:00.000Z">
+<meta property="article:modified_time" content="2022-09-23T05:05:00.000Z">
+<meta property="article:author" content="FuQingSong">
+<meta property="article:tag" content="Seata">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ffuqingsong.gitee.io/pic-go-demo/img/202209231134031.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fuqingsong.work/archives/8d9a091c"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-acDj6daLN5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Seata',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-23 13:05:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/constown/HexoCustomFile@0.0.4/dist/css/custom.min.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-house-chimney-crack"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-pallet"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小`白松</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-house-chimney-crack"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-pallet"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Seata</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-23T05:05:00.000Z" title="发表于 2022-09-23 13:05:00">2022-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-23T05:05:00.000Z" title="更新于 2022-09-23 13:05:00">2022-09-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%8A%80%E6%9C%AF/">分布式技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Seata"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="事务定义"><a href="#事务定义" class="headerlink" title="事务定义"></a>事务定义</h2><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多条SQL语句对数据库进行操作,要么都成功,要么都失败,事务提供了一种机制(&quot;全套&quot;),这个机制将所有涉及到活动的操作纳入到一个不可分割的单元,任何一个操作失败都会导致所有的操作进行回滚.</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h2 id="数据库本地事务"><a href="#数据库本地事务" class="headerlink" title="数据库本地事务"></a>数据库本地事务</h2><h3 id="四大特性-ACID"><a href="#四大特性-ACID" class="headerlink" title="四大特性(ACID)"></a>四大特性(ACID)</h3><blockquote>
+<p>原子性</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务开始之后的所有操作,要么全部完成,要么全部不做,所有操作中的某一个操作失败,都会导致所有的操作回滚到事务开始前的状态,事务是一个不可分割的单元,类似于化学中的原子</span><br></pre></td></tr></table></figure>
+
+<p>一致性</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务开始前和事务结束后,数据库的数据的完整性必须保证一致,例如A向B转账,不能A扣了前B却没收到钱</span><br></pre></td></tr></table></figure>
+
+<p>隔离性</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每个事务之间都是独立个体的存在,它干它的,我干我的,同一个时间内,只允许一个事务对同一个数据进行操作,当一个事务对同一个数据进行操作的时候,要把这个数据隔离起来,别的事务不能对其数据进行操作</span><br></pre></td></tr></table></figure>
+
+<p>持久性</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务结束后,事务对数据库所有的更新将会被保存到数据库中,不能回滚,对数据库的改变是永久性的</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="事务并发出现的问题"><a href="#事务并发出现的问题" class="headerlink" title="事务并发出现的问题"></a>事务并发出现的问题</h3><blockquote>
+<p>脏读</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务A读取到事务B还未提交的数据,当事务B对数据库进行操作的过程中,还没有提交事务的时候,事务A来读取未提交的数据,会出现脏读的数据,这个数据不一定是最终数据.</span><br></pre></td></tr></table></figure>
+
+<p>不可重复读</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个事务中两次读取了某一个数据,每次读取的结果不同.当A事务第一次读取某一个数据后,B事务将此数据更新并提交了,导致A事务第二次读取时数据前后不一致.导致A事务发生疑惑,我也没修改数据啊,怎么就突然变了.重复读取数据会不一致,我还是不重复读了吧.</span><br></pre></td></tr></table></figure>
+
+<p>幻读</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个事务中两次读取的记录数不一致,在A事务第一个读取表记录数后,B事务添加或删除了一条数据,导致A事务第二次读取表记录数时,数据和第一次不同,导致A事务以为自己出现了幻觉,突然多了,突然少了.</span><br></pre></td></tr></table></figure>
+
+<p>小贴士💖</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.不可重复读侧重于修改，解决不可重复读只需锁住满足条件的行</span><br><span class="line">2.幻读侧重于新增或删除。解决幻读需要锁表.</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="四大隔离级别"><a href="#四大隔离级别" class="headerlink" title="四大隔离级别"></a>四大隔离级别</h3><blockquote>
+<p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209221635254.png" alt="image-20220922163525190"></p>
+<p>小贴士💘</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.读未提交</span><br><span class="line">可以说性能是最好的了,压根不加锁,其实谈不上隔离,什么都没隔离.</span><br><span class="line">2.串行化</span><br><span class="line">事务的操作中会加锁,对读的操作加共享锁,别的线程也能来读,可以实现并发读,对写的操作加排它锁,我在写的时候,别的事务不能读也不能写,都等着去.</span><br><span class="line"></span><br><span class="line">Mysql默认事务隔离级别为可重复读</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">跨库的事务,可以称为分布式事务,分布式事务可以理解为一个包含多个本地事务分支的全局事务,所有的本地事务要么一起成功提交,要么一起回滚失败.</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h3><h4 id="CAP"><a href="#CAP" class="headerlink" title="CAP"></a>CAP</h4><blockquote>
+<p>C(一致性)</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两台机器之间的数据是实时一致的,每台机器可以看作一个节点,从任一个节点上读取的数据都是最新的数据</span><br></pre></td></tr></table></figure>
+
+<p>A(可用性)</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两台机器之间的数据不是实时一致的,从任一个节点上读取的数据可能是旧数据</span><br></pre></td></tr></table></figure>
+
+<p>P(分区容错性)</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">某一台机器因为某些问题宕机,有其他的机器提供相同的服务</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h4 id="BASE"><a href="#BASE" class="headerlink" title="BASE"></a>BASE</h4><blockquote>
+<p>BA</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Basic Available 基本可用</span><br><span class="line">1.在一定的时间内任然能够返回一个明确的结果</span><br></pre></td></tr></table></figure>
+
+<p>S</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Soft State 柔性状态</span><br><span class="line">1.同一数据的不同副本的状态，可以不需要实时一致</span><br></pre></td></tr></table></figure>
+
+<p>E</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Eventual Consisstency 最终一致性</span><br><span class="line">1.同一数据的不同副本的状态，可以不需要实时一致，但一定要保证经过一定时间后仍然是一致的。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.强一致性</span><br><span class="line">某个节点更新过的数据,能保证此数据在后续节点的访问都能访问到最新的数据</span><br><span class="line">2.弱一致性</span><br><span class="line">某个节点更新过的数据,可能一段时间能访问,也可能一直访问不到最新消息</span><br><span class="line">3.最终一致性[弱一直性的分支]</span><br><span class="line">某个节点更新过的数据,能保证在某个时间端内一定被访问到</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="2PC-两端-XA事务模式"><a href="#2PC-两端-XA事务模式" class="headerlink" title="2PC(两端)(XA事务模式)"></a>2PC(两端)(XA事务模式)</h4><blockquote>
+<p>成功情况</p>
+<p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209230844863.png" alt="image-20220923084403788"></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;1.准备阶段</span><br><span class="line">&gt;事务管理器向资源管理器发送准备请求,资源管理器开始执行事务操作,事务操作执行完成后返回给事务管理器已完成</span><br><span class="line">&gt;2.提交执行阶段</span><br><span class="line">&gt;事务管理器收到资源管理器的回复的成功消息后向资源管理器发送提交请求,资源管理器收到提交请求后就开始执行事务的提交</span><br></pre></td></tr></table></figure>
+
+<p>失败情况</p>
+<p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209230844879.png" alt="image-20220923084417823"></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;1.准备阶段</span><br><span class="line">&gt;事务管理器向资源管理器发送准备请求,资源管理器开始执行事务操作,事务操作执行过程中出现错误导致执行失败,返回失败消息给事务管理器</span><br><span class="line">&gt;2.提交执行阶段</span><br><span class="line">&gt;如果事务管理器收到任何一个资源管理器执行失败的消息,则向每个资源管理器发送回滚的消息,每个资源管理器收到回滚消息后,根据指令回滚本地事务,释放所有锁的资源</span><br><span class="line">&gt;如果事务管理器收到了任何一个资源管理器失败的消息，则向每个资源管理器发送回滚消息。资源管理器根据事务管理器的指令回滚本地事务操作，释放所有事务处理过程中使用的锁资源。</span><br></pre></td></tr></table></figure>
+
+<p>小结</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;1.阻塞问题</span><br><span class="line">&gt;一旦一个资源管理器一直失败,则会导致其他资源管理器一直无法提交完成自己的事务</span><br><span class="line">&gt;2.单点故障问题</span><br><span class="line">&gt;一旦一个事务管理器挂掉了,则会导致整个系统不可用</span><br><span class="line">&gt;3.一致性问题</span><br><span class="line">&gt;当事务管理器发送提交消息后,有的资源管理器可能提交失败,所以会导致整个事务不一致,每个节点是数据不一致</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h4 id="3PC-三端"><a href="#3PC-三端" class="headerlink" title="3PC(三端)"></a>3PC(三端)</h4><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3PC比2PC多了一个询问的阶段,在准备阶段之前多了一个询问阶段,先询问资源管理器能不能执行事务的操作</span><br></pre></td></tr></table></figure>
+
+<p>小结</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.3PC引入了超时机制,在准备阶段超时的资源管理器,则任务失败,在提交阶段超时的资源管理器,则其他资源管理器不会等待</span><br><span class="line">2.解决了阻塞和单点故障问题</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="本地消息表-MQ"><a href="#本地消息表-MQ" class="headerlink" title="本地消息表+MQ"></a>本地消息表+MQ</h4><blockquote>
+<p>暂略</p>
+</blockquote>
+<h4 id="TCC"><a href="#TCC" class="headerlink" title="TCC"></a>TCC</h4><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2007的老古董,分为三个阶段,尝试,确定,取消,市面上基本没人用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. try 尝试阶段 尝试锁定资源</span><br><span class="line">2. confirm 确认阶段 尝试将锁定的资源进行提交</span><br><span class="line">3. cancel 取消阶段 其中某个环节执行失败，将发起事务取消动作</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TCC适合严格一致性的业务活动,TCC有三个阶段,对应的三个动作,每个动作都要保证幂等性,例如转账业务,三个阶段对应的是冻结,扣钱,解冻</span><br></pre></td></tr></table></figure>
+
+<p>幂等性</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">多次对数据库的操作,结果都是一直的.</span><br><span class="line">例如:</span><br><span class="line">用户进行支付,因为网络问题,用户多点击了一次支付,系统不会因为用户多点击一次,不会多扣款</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="Saga"><a href="#Saga" class="headerlink" title="Saga"></a>Saga</h4><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Saga的历史比TCC还悠远,可以追述到1987年,核心思想是将长事务拆分为多个短事务,</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="最大努力补偿"><a href="#最大努力补偿" class="headerlink" title="最大努力补偿"></a>最大努力补偿</h4><blockquote>
+<p>暂略</p>
+</blockquote>
+<h2 id="Seata"><a href="#Seata" class="headerlink" title="Seata"></a>Seata</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是一款阿里巴巴开源的分布式事务的解决方案,提供了多种事务模式,(AT、TCC、SAGA 和 XA 等)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="三个组件"><a href="#三个组件" class="headerlink" title="三个组件"></a>三个组件</h3><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.Transaction Coordinator (TC)</span><br><span class="line">事务的协调者,维护全局事务和分支事务的运行状态,负责驱动全局事务的提交和回滚</span><br><span class="line">2.Transaction Manager (TM)</span><br><span class="line">事务管理器,复制开启全局事务,提交和回滚事务</span><br><span class="line">3.Resource Manager (RM)</span><br><span class="line">资源管理器,负责本地分支事务的注册,接收事务协调者指令,驱动本地分支事务的提交和回滚</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h3><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.事务管理器向事务协调者申请开启一个全局事务,事务管理器会创建一个全局事务并生成一个全局唯一的XID</span><br><span class="line">2.XID在各个微服务之间调用传递</span><br><span class="line">3.资源管理器向事务协调者注册本地分支事务,并将分支事务纳入到XID对应的全局事务的管辖中</span><br><span class="line">4.事务管理器向事务协调者发起针对XID所绑定的全局事务的全局提交和回滚决议</span><br><span class="line">5.事务协调者调度XID所管辖的全部分支事务使它们完成提交和回滚的请求</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="两个阶段"><a href="#两个阶段" class="headerlink" title="两个阶段"></a>两个阶段</h3><blockquote>
+<h4 id="一阶段"><a href="#一阶段" class="headerlink" title="一阶段"></a>一阶段</h4><p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209230955148.png" alt="image-20220923095551033"></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.解析SQL语句,生成一条SQL,先查询当前数据库镜像,保存原镜像</span><br><span class="line">2.执行解析后的SQL语句,查询新的数据库镜像,保存新镜像</span><br><span class="line">3.将两个镜像组成回滚日志,将业务数据的更新和回滚日志放在同一个事务中进行提交,放别插入到不同的表中</span><br><span class="line">4.将提交事务的结果上报给事务协调者</span><br></pre></td></tr></table></figure>
+
+<h4 id="二阶段-做提交和回滚"><a href="#二阶段-做提交和回滚" class="headerlink" title="二阶段(做提交和回滚)"></a>二阶段(做提交和回滚)</h4><p>全局提交</p>
+<p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209231010446.png" alt="image-20220923101020299"></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.各分支事务提交提交完成,之后事务协调者会向分支发送第二阶段请求,分支收到请求会把该请求放在异步队列中</span><br><span class="line">2.异步队列会根据分支的ID查找并删除回滚日志</span><br></pre></td></tr></table></figure>
+
+<p>全局回滚</p>
+<p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209231010021.png" alt="image-20220923101029847"></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.全局回滚会进行查找回滚日志,并解析回滚日志,执行回滚反向更新,完成分支的回滚</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h3><blockquote>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.添加seata依赖</span><br><span class="line">2.添加配置文件</span><br><span class="line">3.注入数据源</span><br><span class="line">4.每个微服务中添加yml配置 </span><br><span class="line">5.使用@GlobalTransactional开启事务</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><blockquote>
+<p>MySQL的事务</p>
+<p>简述在MySQL数据库中MyISAM和InnoDB的区别</p>
+<p>请描述一下Spring 的事务管理</p>
+<p>Redis有事务吗?</p>
+<p>如何使用RabbitMQ解决分布式事务？</p>
+<p>讲讲spring事务</p>
+<p>你们是怎么使用spring事务的</p>
+<p>spring事务失效情况</p>
+<p>spring事务原理</p>
+<p>@Transactional注解加在什么地方都可以吗</p>
+<p>MQ解决分布式事务问题的</p>
+<p>数据库事务？什么是事务？什么时候用？怎么用？为什么用它</p>
+<p>分布式事务有几种实现方式</p>
+<p>spring事务传播机制</p>
+<p>mysql的事务级别</p>
+<p>事务：隔离级别，传播行为</p>
+<p>redis的事务说明一下</p>
+<p>Redis集群下的分布式事务</p>
+<p>事务管理@Transactinal里的参数</p>
+<p>JDBC的连接Collercion 怎么创建事务</p>
+<p>事务实现的原理是什么</p>
+<p>Transactional 传播行为是nested的子事务放在主事务不同位置对主事务的回滚来说，有没有不同</p>
+<p>mysql事务的acid分别由哪些重要操作保证，mvcc和lbcc的机制</p>
+<p>redis事务和spring事务在一起时,如何处理</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://fuqingsong.work">FuQingSong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://fuqingsong.work/archives/8d9a091c.html">https://fuqingsong.work/archives/8d9a091c.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fuqingsong.work" target="_blank">小`白松</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Seata/">Seata</a></div><div class="post_share"><div class="social-share" data-image="https://ffuqingsong.gitee.io/pic-go-demo/img/202209231134031.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/archives/aa55683f.html"><img class="next-cover" src="https://ffuqingsong.gitee.io/pic-go-demo/img/202209211939330.png" onerror="onerror=null;src='/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JUC</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzIxNS8zMzY3OQ=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">事务定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%AC%E5%9C%B0%E4%BA%8B%E5%8A%A1"><span class="toc-number">2.</span> <span class="toc-text">数据库本地事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7-ACID"><span class="toc-number">2.1.</span> <span class="toc-text">四大特性(ACID)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%B9%B6%E5%8F%91%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text">事务并发出现的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%A4%A7%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">2.3.</span> <span class="toc-text">四大隔离级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">分布式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-number">3.2.</span> <span class="toc-text">理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CAP"><span class="toc-number">3.2.1.</span> <span class="toc-text">CAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BASE"><span class="toc-number">3.2.2.</span> <span class="toc-text">BASE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-number">3.2.3.</span> <span class="toc-text">一致性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.3.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2PC-%E4%B8%A4%E7%AB%AF-XA%E4%BA%8B%E5%8A%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.3.1.</span> <span class="toc-text">2PC(两端)(XA事务模式)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3PC-%E4%B8%89%E7%AB%AF"><span class="toc-number">3.3.2.</span> <span class="toc-text">3PC(三端)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%B6%88%E6%81%AF%E8%A1%A8-MQ"><span class="toc-number">3.3.3.</span> <span class="toc-text">本地消息表+MQ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCC"><span class="toc-number">3.3.4.</span> <span class="toc-text">TCC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Saga"><span class="toc-number">3.3.5.</span> <span class="toc-text">Saga</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E8%A1%A5%E5%81%BF"><span class="toc-number">3.3.6.</span> <span class="toc-text">最大努力补偿</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seata"><span class="toc-number">4.</span> <span class="toc-text">Seata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">4.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E7%BB%84%E4%BB%B6"><span class="toc-number">4.2.</span> <span class="toc-text">三个组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">4.3.</span> <span class="toc-text">执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">4.4.</span> <span class="toc-text">两个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E6%AE%B5"><span class="toc-number">4.4.1.</span> <span class="toc-text">一阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E6%AE%B5-%E5%81%9A%E6%8F%90%E4%BA%A4%E5%92%8C%E5%9B%9E%E6%BB%9A"><span class="toc-number">4.4.2.</span> <span class="toc-text">二阶段(做提交和回滚)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">4.5.</span> <span class="toc-text">实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By FuQingSong</div><div class="footer_custom_text"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.gov.cn"><img class="icp-icon" src="https://ffuqingsong.gitee.io/pic-go-demo/img/security1.png"><span>备案号:豫ICP备2022018990号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="7572694205" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="true"> </div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "7ce6a135-3e53-461b-ba2b-cd0ea32778c4";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (false) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
