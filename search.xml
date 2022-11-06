@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/archives/0.html"/>
+      <url>/archives/0.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>查看端口占用</p><blockquote><p>查看所有端口情况</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure></blockquote><p>配置GitHub连接</p><blockquote><p>生成密钥</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure><p>将pub的公钥文件内容设置在远程托管平台上</p><p><img src="https://ffuqingsong.gitee.io/pic-go-demo/img/202210151757494.png" alt="image-20221015175739398"></p><p>尝试连接</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>报错解决</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#在.ssh/目录中创建config文件</span></span><br><span class="line"><span class="built_in">touch</span> config</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加以下内容</span></span><br><span class="line">Host github.com</span><br><span class="line">Port 443</span><br><span class="line">HostName ssh.github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"><span class="comment">#再次尝试连接</span></span><br></pre></td></tr></table></figure><p>如果还有问题请修改host文件</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">127.0.0.1   localhost</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> The following lines are desirable for IPv6 capable hosts</span><br><span class="line">::1     ip6-localhost ip6-loopback</span><br><span class="line">fe00::0 ip6-localnet</span><br><span class="line">ff00::0 ip6-mcastprefix</span><br><span class="line">ff02::1 ip6-allnodes</span><br><span class="line">ff02::2 ip6-allrouters</span><br><span class="line"></span><br><span class="line"><span class="params">#</span> GitHub</span><br><span class="line">20.205.243.166  github.com</span><br><span class="line">20.205.243.160  ssh.github.com</span><br></pre></td></tr></table></figure><p>然后后面克隆项目可能需要配置GitHub中的token</p></blockquote><p>星球大战</p><blockquote><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">telnet towel.blinkenlights.nl</span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构</title>
       <link href="/archives/79666db.html"/>
       <url>/archives/79666db.html</url>
